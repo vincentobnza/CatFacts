@@ -11,7 +11,6 @@ export const useQuoteStore = create<QuoteStoreState>((set) => ({
     try {
       const response = await fetch("https://catfact.ninja/fact");
       const data = await response.json();
-
       set({ text: data.fact, loading: false });
     } catch (error) {
       console.error("Failed to fetch quote:", error);
